@@ -86,10 +86,28 @@ The project is configured for:
 - CUDA 11.8 compatible PyTorch is included
 - The training script is optimized for limited VRAM (GTX 1650+)
 
-## License
 
-[Add your license here]
+## Dataset
+```json
+{
+  "example_id": "journalA_001",
+  "journal_type": "A",
+  "instruction": "Apply style guide A: Uppercase all <title>, font Arial 12pt, wrap body in <section>.",
+  "input": "<journal><title>hello world</title><body>Text here.</body></journal>",
+  "output": "<journal><section><title>HELLO WORLD</title><body style=\"font-family:Arial; font-size:12pt;\">Text here.</body></section></journal>",
+  "error_type": "missing_section_tag",
+  "correction": "Added <section> wrapping around <body> tag",
+  "input_valid": false,
+  "output_valid": true,
+  "style_guide_version": "1.0",
+  "confidence": 0.75,
+  "metadata": {
+    "font_family": "Arial",
+    "font_size": "12pt",
+    "uppercase_titles": true,
+    "wrap_body_in_section": true
+  },
+  "notes": "Example with missing <section> tag in input, fixed in output."
+}
 
-## Contributing
-
-[Add contribution guidelines here]
+```
